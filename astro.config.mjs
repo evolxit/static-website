@@ -3,7 +3,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  server: { port: 3000 },
+  site: "https://evolx.netlify.app/",
   integrations: [tailwind()],
   vite: {
     ssr: {
