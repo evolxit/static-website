@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const services: Array<FeatureItem> = [
+  {
+    title: "360 Marketing & Advertising",
+    description:
+      "Repudiandae qui eius libero aliquam provident impedit quisquam dolor. Sit enim enim tempora libero reiciendis iste labore alias.",
+    icon: "mdi:account-group",
+  },
+  {
+    title: "Facebook Marketing & Management",
+    description:
+      "Repudiandae qui eius libero aliquam provident impedit quisquam dolor. Sit enim enim tempora libero reiciendis iste labore alias.",
+    icon: "mdi:directions-fork",
+  },
+  {
+    title: "Websites & App Development",
+    description:
+      "We can develop corporate websites, e-commerce applications, information websites and any programming solutions you need.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Domains, Emails & Servers",
+    description:
+      "We can setup and manage domain names, email services and cloud or VPS servers for you.",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "Video & On-Air Production",
+    description:
+      "Repudiandae qui eius libero aliquam provident impedit quisquam dolor. Sit enim enim tempora libero reiciendis iste labore alias.",
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Logo, Graphic Design & Printing",
+    description:
+      "Repudiandae qui eius libero aliquam provident impedit quisquam dolor. Sit enim enim tempora libero reiciendis iste labore alias.",
+    icon: "mdi:graph",
+  },
+];
+---
+
+<ContentSection title="Our Services" id="services">
+  <Fragment slot="lead">
+    We are a blue-ribbon group of <span class="text-primary">kind and talented people</span> well equipped with 
+    the sense of <span class="text-primary">responsibility and the strong gut</span> to outreach every obstacles
+    in the process of providing the <best class="text-primary">best service</best> for our clients.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

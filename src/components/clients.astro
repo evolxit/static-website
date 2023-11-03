@@ -1,9 +1,9 @@
 ---
-import CompatibilityList from "~/components/compatibility-list.astro";
+import ClientList from "~/components/client-list.astro";
 import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
 
-const frameworks: Array<CompatibilityItem> = [
+const current: Array<CompatibilityItem> = [
   {
     title: "React",
     icon: "frameworks/react",
@@ -36,7 +36,7 @@ const frameworks: Array<CompatibilityItem> = [
   },
 ];
 
-const platforms: Array<CompatibilityItem> = [
+const past: Array<CompatibilityItem> = [
   {
     title: "Netlify",
     icon: "platforms/netlify",
@@ -70,20 +70,19 @@ const platforms: Array<CompatibilityItem> = [
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Our Clients" id="our-clients">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-     and deploy to your favorite <span class="text-primary">platform</span>.
+    <span class="text-primary">Since 2012</span>, we have worked with <span class="text-primary">2672</span> esteemed clients,
+    and it was our pleasure to <span class="text-primary">help them achieve</span> their organisational goals.
   </Fragment>
-  <CompatibilityList
-    items={frameworks}
-    title="Frameworks"
-    url="https://docs.astro.build/core-concepts/framework-components/"
+  <ClientList
+    items={current}
+    title="Currently working with"
+    url="#"
   />
-  <CompatibilityList
-    items={platforms}
-    title="Platforms"
-    url="https://docs.astro.build/guides/deploy/"
+  <ClientList
+    items={past}
+    title="Proudly worked with"
+    url="#"
   />
 </ContentSection>
