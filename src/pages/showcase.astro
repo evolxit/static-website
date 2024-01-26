@@ -1,8 +1,19 @@
 ---
 import PageLayout from "~/layouts/PageLayout.astro";
-
+const res = await fetch("https://cms.evolxit.com/wp-json/wp/v2/posts");
+const posts = await res.json();
 ---
 
 <PageLayout title="Showcase">
     <h1>Showcase Page</h1>
+    {
+        posts.map((post:any) => (
+            <article>
+                <h2>
+                    <a href={`/dinos/${post.slug}/`} set:html={post.title.rendered} />
+                </h2>
+                <Fragment set:html={post.content.rendered} />
+            </article>
+        ))
+    }
 </PageLayout>
